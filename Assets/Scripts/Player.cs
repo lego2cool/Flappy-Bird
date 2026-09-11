@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D PlayerBody;
     public float flapForce = 5f;
+    public float maxFallSpeed = 10f;
+
+    public bool GameIsPlaying = true;
 
 
     private InputAction flap;
@@ -26,9 +29,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameIsPlaying)
+        {
+            return;
+        }
+
         if (flap != null && flap.triggered)
         {
             FlapForMe();
+        }
+
+        if (PlayerBody.linearVelocity.y < -maxFallSpeed)
+        {
+            // Player is falling too fast, reset the vertical velocity
+            PlayerBody.linearVelocity = new Vector2(PlayerBody.linearVelocity.x, -maxFallSpeed);
         }
     }
 
