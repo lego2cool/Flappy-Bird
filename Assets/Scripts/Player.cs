@@ -83,8 +83,9 @@ public class Player : MonoBehaviour
         Debug.Log("Game Over!");
         PlayerAnimator.enabled = false;
 
-        if (collision.gameObject.name == "Pipe")
+        if (collision.gameObject.GetComponent<Pipe>())
         {
+            Debug.Log("Collided with a pipe!");
             collision.collider.enabled = false; // Disable the collider to prevent further collisions
         }
     }

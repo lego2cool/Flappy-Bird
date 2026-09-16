@@ -53,7 +53,7 @@ MonoBehaviour:
   flapForce: 5
   maxFallSpeed: 10
   maxRotationAngle: -45
-  rotationSpeed: 100
+  rotationSpeed: 50
   GameIsPlaying: 1
 --- !u!50 &7695565346715684148
 Rigidbody2D:
