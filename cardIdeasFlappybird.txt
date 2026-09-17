@@ -1,9 +1,16 @@
+CARDS
 1. Player size
 2. Pipe frequency
-3. 
-4. 
-5. 
-6. 
-7. 
+3. Lives
+4. Pipe Gap
+5. EXP gain
+6. Constant exp
+7. Lucky Pipes (more exp)
 8. 
 9. 
+
+Active Abilitys/Upgrades
+1. Dash
+2. Jetpack
+3. Air Brake
+4. 
