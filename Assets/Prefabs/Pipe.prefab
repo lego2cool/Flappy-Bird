@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
   destroyXPosition: -13
+  expManager: {fileID: 0}
+  player: {fileID: 5377388447711982427, guid: da2647f36e73a29479a4a97729e24baf, type: 3}
 --- !u!1 &5817241678044187778
 GameObject:
   m_ObjectHideFlags: 0
