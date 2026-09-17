@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
   destroyXPosition: -13
-  expManager: {fileID: 0}
-  player: {fileID: 5377388447711982427, guid: da2647f36e73a29479a4a97729e24baf, type: 3}
+  expGainedFromPipe: 10
+  gotExpFromThisPipe: 0
 --- !u!1 &5817241678044187778
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 8007527950058762524}
   - component: {fileID: 8559954177602831711}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Not top Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9452ae1262a74094f8a68013fbcd1834, type: 2}
+  - {fileID: 2100000, guid: 9c995e61bff6da54098df7153757a140, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 6705127254816684817}
   - component: {fileID: 2070227601325042290}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Top Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9452ae1262a74094f8a68013fbcd1834, type: 2}
+  - {fileID: 2100000, guid: 0e53ebdd45ef4bf4e9ea5f149beb37ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

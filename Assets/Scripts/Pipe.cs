@@ -4,28 +4,30 @@ public class Pipe : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float destroyXPosition = -13f;
-    [SerializeField] private ExpManager expManager;
-    [SerializeField] private Player player;
+    [SerializeField] private int expGainedFromPipe = 10; // X position where experience is gained
+    private Player player;
+    private ExpManager expManager;
 
-    private bool gotExpFromThisPipe = false; // Flag to track if experience has been gained from this pipe
+    public bool gotExpFromThisPipe = false; // Flag to track if experience has been gained from this pipe
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ExpManager expManager = FindAnyObjectByType<ExpManager>();
+        player = FindAnyObjectByType<Player>(); 
+        expManager = player.expManager;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.GameIsPlaying)
+        if (player != null && player.GameIsPlaying)
         {
             MovePipe();
         }
 
         if (transform.position.x <= player.transform.position.x && !gotExpFromThisPipe)
         {
-            expManager.AddExp(1); // Add experience when the pipe is passed
+            expManager.AddExp(expGainedFromPipe); // Add experience when the pipe is passed
             gotExpFromThisPipe = true; // Set the flag to true to prevent multiple experience gains from the same pipe
         }
 

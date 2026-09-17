@@ -6,11 +6,13 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D PlayerBody;
     [SerializeField] private Animator PlayerAnimator;
+    public ExpManager expManager;
     public float flapForce = 5f;
     public float maxFallSpeed = 10f;
     public float maxRotationAngle = -45f;
     public float rotationSpeed = 100f;
     public bool GameIsPlaying = true;
+    public bool DebugMode = true;
 
 
     private InputAction flap;

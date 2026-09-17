@@ -8,9 +8,10 @@ public class Pipe_Spawner : MonoBehaviour
     [SerializeField] private float MaxPipeOffsetHeightWhateverThing = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.softGreen;
+        Gizmos.DrawSphere(transform.position, 0.3f);
     }
 
     // Update is called once per frame
@@ -27,7 +28,9 @@ public class Pipe_Spawner : MonoBehaviour
     {
         float randomOffset = Random.Range(-MaxPipeOffsetHeightWhateverThing, MaxPipeOffsetHeightWhateverThing);
         transform.position = new Vector3(transform.position.x, randomOffset, transform.position.z);
-        Instantiate(pipePrefab, transform.position + Vector3.up * FlyThroughGap, Quaternion.identity);
+        GameObject upperPipe = Instantiate(pipePrefab, transform.position + Vector3.up * FlyThroughGap, Quaternion.identity);
         Instantiate(pipePrefab, transform.position - Vector3.up * FlyThroughGap, Quaternion.Euler(180f, 0f, 0f));
+
+        upperPipe.GetComponent<Pipe>().gotExpFromThisPipe = true; // Set the flag to true for the upper pipe to prevent experience gain from it
     }
 }
