@@ -69,6 +69,10 @@ public class Player : MonoBehaviour
 
     private void FlapForMe()
     {
+        if (PlayerBody.bodyType == RigidbodyType2D.Kinematic)
+        {
+            PlayerBody.bodyType = RigidbodyType2D.Dynamic; // Change the body type to Dynamic when flapping
+        }
         transform.rotation = Quaternion.Euler(0f, 0f, 30f); // Rotate the player upwards when flapping
         PlayerBody.linearVelocity = Vector2.zero; // Reset the vertical velocity before applying the flap force
         PlayerBody.AddForce(Vector2.up * flapForce, ForceMode2D.Impulse);

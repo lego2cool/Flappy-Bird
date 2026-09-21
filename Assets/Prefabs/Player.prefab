@@ -50,11 +50,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   PlayerBody: {fileID: 7695565346715684148}
   PlayerAnimator: {fileID: 5852279938386158538}
+  expManager: {fileID: 0}
   flapForce: 5
   maxFallSpeed: 10
   maxRotationAngle: -45
   rotationSpeed: 50
   GameIsPlaying: 1
+  DebugMode: 1
 --- !u!50 &7695565346715684148
 Rigidbody2D:
   serializedVersion: 5
@@ -63,7 +65,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3737726319034454823}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
