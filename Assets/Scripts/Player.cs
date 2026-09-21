@@ -1,11 +1,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D PlayerBody;
     [SerializeField] private Animator PlayerAnimator;
+    [SerializeField] private Canvas restartCanvas;
     public ExpManager expManager;
     public float flapForce = 5f;
     public float maxFallSpeed = 10f;
@@ -94,5 +96,7 @@ public class Player : MonoBehaviour
             Debug.Log("Collided with a pipe!");
             collision.collider.enabled = false; // Disable the collider to prevent further collisions
         }
+
+        restartCanvas.gameObject.SetActive(true);
     }
 }
