@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pipe Bottom
-  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f0c666e6b5fd1564bb42e38a7f11fa3f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,10 +41,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BorderSize: 0.05
+    - _BorderWidthPixels: 4
     - _EnableExternalAlpha: 0
     - _ZWrite: 0
     m_Colors:
+    - _BorderColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 0.13014746, g: 0.81886786, b: 0, a: 1}
+    - _FillColor: {r: 0.12941177, g: 0.81960785, b: 0, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
