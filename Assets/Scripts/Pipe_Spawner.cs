@@ -6,6 +6,7 @@ public class Pipe_Spawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 2f;
     [SerializeField] private float FlyThroughGap = 0f;
     [SerializeField] private float MaxPipeOffsetHeightWhateverThing = 0f;
+    private float spawnTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnDrawGizmos()
@@ -17,10 +18,15 @@ public class Pipe_Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= spawnInterval && FindAnyObjectByType<Player>().GameIsPlaying)
+        Player player = FindAnyObjectByType<Player>();
+        if (player != null && player.GameIsPlaying)
         {
-            SpawnPipe();
-            spawnInterval = Time.time + 2f; // Reset the spawn interval
+            spawnTimer += Time.deltaTime;
+            if (spawnTimer >= spawnInterval)
+            {
+                SpawnPipe();
+                spawnTimer = 0f;
+            }
         }
     }
 
