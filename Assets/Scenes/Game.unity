@@ -2450,7 +2450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pipePrefab: {fileID: 1864805184589441221, guid: 966b8a7c8ac0c314b8a2a73eda8a7e0e, type: 3}
-  spawnInterval: 1
+  spawnInterval: 1.5
   FlyThroughGap: -1
   MaxPipeOffsetHeightWhateverThing: 3.85
 --- !u!4 &1232716401
