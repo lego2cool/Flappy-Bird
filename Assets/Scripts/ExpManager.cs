@@ -4,12 +4,13 @@ using TMPro;
 
 public class ExpManager : MonoBehaviour
 {
-    public int currentExp;
+    public float currentExp;
     public int expToUpgrade = 20;
     public float expGrowthMultiplier = 1.2f;
     public Slider expSlider;
     public TMP_Text expText;
     public bool enableDebugText = true;
+    [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class ExpManager : MonoBehaviour
     } 
     public void AddExp(int amount)
     {
-        currentExp += amount;
+        currentExp += amount * (1f + allUpgradeModifiers.expGainModifier);
         Debug.Log("Current Experience: " + currentExp + "/" + expToUpgrade);
         if (currentExp >= expToUpgrade)
         {

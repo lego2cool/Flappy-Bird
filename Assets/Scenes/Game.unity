@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 84338315}
   - component: {fileID: 84338314}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Title1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115828459}
+  - component: {fileID: 115828460}
   - component: {fileID: 115828458}
   - component: {fileID: 115828457}
   - component: {fileID: 115828456}
@@ -362,6 +363,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &115828460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115828455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede066d70a5a9424b93529bf1c44c308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  upgrades:
+  - {fileID: 11400000, guid: 28f0ce1001f85f14884b734c3263461d, type: 2}
+  - {fileID: 11400000, guid: e44565ea8ee76b240b6a21a7ed4b9056, type: 2}
+  - {fileID: 11400000, guid: a850288b0170651429c1b60de719416e, type: 2}
+  - {fileID: 11400000, guid: 852f3169bcae5d844851aaedffc4eae4, type: 2}
+  - {fileID: 11400000, guid: 43ac4c0701bb8124d9d9cf703d8d50fa, type: 2}
+  - {fileID: 11400000, guid: 11322b7f48adf7841afe2b27ec904484, type: 2}
+  - {fileID: 11400000, guid: 3f98a17b30dd6934998290eb4aba612e, type: 2}
+  upgradeButtons:
+  - button: {fileID: 695957177}
+    title: {fileID: 84338314}
+    description: {fileID: 755606213}
+  - button: {fileID: 1424388890}
+    title: {fileID: 1901830480}
+    description: {fileID: 345474574}
+  - button: {fileID: 695864732}
+    title: {fileID: 1836653611}
+    description: {fileID: 441445598}
 --- !u!1 &345474572
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +405,7 @@ GameObject:
   - component: {fileID: 345474575}
   - component: {fileID: 345474574}
   m_Layer: 5
-  m_Name: Description
+  m_Name: Description2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -225, y: -80.00002}
+  m_AnchoredPosition: {x: 0, y: -80.00002}
   m_SizeDelta: {x: -20, y: -0.000045776367}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &345474574
@@ -584,7 +615,7 @@ GameObject:
   - component: {fileID: 441445599}
   - component: {fileID: 441445598}
   m_Layer: 5
-  m_Name: Description
+  m_Name: Description3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: -80.00003}
+  m_AnchoredPosition: {x: 0, y: -80.00003}
   m_SizeDelta: {x: -20, y: -0.000045776367}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441445598
@@ -1531,7 +1562,7 @@ GameObject:
   - component: {fileID: 695864733}
   - component: {fileID: 695864732}
   m_Layer: 5
-  m_Name: CardButton
+  m_Name: CardButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1684,7 @@ GameObject:
   - component: {fileID: 695957178}
   - component: {fileID: 695957177}
   m_Layer: 5
-  m_Name: CardButton
+  m_Name: CardButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,7 +1929,7 @@ GameObject:
   - component: {fileID: 755606214}
   - component: {fileID: 755606213}
   m_Layer: 5
-  m_Name: Description
+  m_Name: Description1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,7 +1952,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -80.00002}
-  m_SizeDelta: {x: -20, y: -0.000045776367}
+  m_SizeDelta: {x: -20, y: -0.000038146973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755606213
 MonoBehaviour:
@@ -2693,7 +2724,7 @@ GameObject:
   - component: {fileID: 1424388891}
   - component: {fileID: 1424388890}
   m_Layer: 5
-  m_Name: CardButton
+  m_Name: CardButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3333,7 +3364,7 @@ GameObject:
   - component: {fileID: 1836653612}
   - component: {fileID: 1836653611}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Title3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,7 +3386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: -15}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836653611
@@ -3470,7 +3501,7 @@ GameObject:
   - component: {fileID: 1901830481}
   - component: {fileID: 1901830480}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Title2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3492,7 +3523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -225, y: -15}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901830480

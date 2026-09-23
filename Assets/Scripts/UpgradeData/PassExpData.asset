@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f9f8132a86c0c14781222010bc6e069, type: 3}
-  m_Name: UpgradeData
+  m_Name: PassExpData
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  title: Smaller Bird
-  description: Reduce player size by {value}%
-  upgradeType: 0
-  firstUpgrade: 0
+  title: Passive EXP
+  description: Gain 1 EXP every {value} seconds
+  upgradeType: 5
+  firstUpgrade: 5
   minValue: 5
   maxValue: 15
   isPercentage: 1

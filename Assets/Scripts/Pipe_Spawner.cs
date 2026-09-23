@@ -6,6 +6,8 @@ public class Pipe_Spawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 2f;
     [SerializeField] private float FlyThroughGap = 0f;
     [SerializeField] private float MaxPipeOffsetHeightWhateverThing = 0f;
+    [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
+
     private float spawnTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,7 +24,7 @@ public class Pipe_Spawner : MonoBehaviour
         if (player != null && player.GameIsPlaying)
         {
             spawnTimer += Time.deltaTime;
-            if (spawnTimer >= spawnInterval)
+            if (spawnTimer >= spawnInterval * (1f - allUpgradeModifiers.PipeFrequencyModifier))
             {
                 SpawnPipe();
                 spawnTimer = 0f;

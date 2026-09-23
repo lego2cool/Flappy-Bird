@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D PlayerBody;
     [SerializeField] private Animator PlayerAnimator;
     [SerializeField] private Canvas restartCanvas;
+    [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
+
     public ExpManager expManager;
     public float flapForce = 5f;
     public float maxFallSpeed = 10f;
