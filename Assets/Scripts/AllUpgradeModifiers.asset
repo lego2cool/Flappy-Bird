@@ -15,7 +15,7 @@ MonoBehaviour:
   PlayerScaleModifier: 0
   PipeFrequencyModifier: 0
   PipeGapModifier: 0
-  LivesModifier: 0
+  LivesCount: 1
   expGainModifier: 0
   ConstantExpModifier: 0
   LuckyPipesModifier: 0

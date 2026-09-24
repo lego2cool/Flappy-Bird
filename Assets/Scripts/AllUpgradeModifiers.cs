@@ -6,7 +6,7 @@ public class AllUpgradeModifiers : ScriptableObject
     public float PlayerScaleModifier;
     public float PipeFrequencyModifier;
     public float PipeGapModifier;
-    public int LivesModifier;
+    public int LivesCount;
     public float expGainModifier;
     public float ConstantExpModifier;
     public float LuckyPipesModifier;

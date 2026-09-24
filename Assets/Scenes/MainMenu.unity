@@ -599,6 +599,7 @@ MonoBehaviour:
   buttonScenes:
   - button: {fileID: 145965319}
     sceneName: Game
+  allUpgradeModifiers: {fileID: 11400000, guid: 71add1f5205004043b2ff71243875e06, type: 2}
 --- !u!1 &1809403684
 GameObject:
   m_ObjectHideFlags: 0

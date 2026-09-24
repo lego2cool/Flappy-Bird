@@ -30,6 +30,7 @@ public class UpgradeData : ScriptableObject
     public string Title => title;
     public string Description => description;
     public UpgradeType Type => upgradeType;
+    public int FirstUpgrade => firstUpgrade;
     public int MinValue => minValue;
     public int MaxValue => maxValue;
     public bool IsPercentage => isPercentage;

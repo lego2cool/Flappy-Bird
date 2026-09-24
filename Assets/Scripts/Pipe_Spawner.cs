@@ -24,7 +24,7 @@ public class Pipe_Spawner : MonoBehaviour
         if (player != null && player.GameIsPlaying)
         {
             spawnTimer += Time.deltaTime;
-            if (spawnTimer >= spawnInterval * (1f - allUpgradeModifiers.PipeFrequencyModifier))
+            if (spawnTimer >= spawnInterval * (1 - allUpgradeModifiers.PipeFrequencyModifier))
             {
                 SpawnPipe();
                 spawnTimer = 0f;
@@ -36,8 +36,9 @@ public class Pipe_Spawner : MonoBehaviour
     {
         float randomOffset = Random.Range(-MaxPipeOffsetHeightWhateverThing, MaxPipeOffsetHeightWhateverThing);
         transform.position = new Vector3(transform.position.x, randomOffset, transform.position.z);
-        GameObject upperPipe = Instantiate(pipePrefab, transform.position + Vector3.up * FlyThroughGap, Quaternion.identity);
-        Instantiate(pipePrefab, transform.position - Vector3.up * FlyThroughGap, Quaternion.Euler(180f, 0f, 0f));
+        float currentGap = FlyThroughGap * (1f + (allUpgradeModifiers != null ? allUpgradeModifiers.PipeGapModifier : 0f));
+        GameObject upperPipe = Instantiate(pipePrefab, transform.position + Vector3.up * currentGap, Quaternion.identity);
+        Instantiate(pipePrefab, transform.position - Vector3.up * currentGap, Quaternion.Euler(180f, 0f, 0f));
 
         upperPipe.GetComponent<Pipe>().gotExpFromThisPipe = true; // Set the flag to true for the upper pipe to prevent experience gain from it
     }

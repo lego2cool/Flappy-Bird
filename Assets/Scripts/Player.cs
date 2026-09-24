@@ -20,6 +20,12 @@ public class Player : MonoBehaviour
 
 
     private InputAction flap;
+    private Vector3 baseScale;
+
+    private void Awake()
+    {
+        baseScale = transform.localScale;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +44,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdatePlayerScale();
         float currentZ = transform.eulerAngles.z;
 
          // Convert 0-360 scale to -180 to 180 scale (330 becomes -30)
@@ -70,6 +77,14 @@ public class Player : MonoBehaviour
     {
         flap?.Disable();
     }
+    private void UpdatePlayerScale()
+    {
+        float scaleModifier = allUpgradeModifiers != null
+            ? allUpgradeModifiers.PlayerScaleModifier
+            : 0f;
+        float scaleMultiplier = Mathf.Max(0.1f, 1f - scaleModifier);
+        transform.localScale = baseScale * scaleMultiplier;
+    }
 
     private void FlapForMe()
     {
@@ -97,6 +112,15 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Collided with a pipe!");
             collision.collider.enabled = false; // Disable the collider to prevent further collisions
+            if (allUpgradeModifiers != null && allUpgradeModifiers.LivesCount > 0)
+            {
+                allUpgradeModifiers.LivesCount--;
+                GameIsPlaying = true;
+                PlayerAnimator.enabled = true;
+                transform.position = Vector3.zero;
+                PlayerBody.linearVelocity = Vector2.zero;
+                return;
+            }
         }
 
         restartCanvas.gameObject.SetActive(true);

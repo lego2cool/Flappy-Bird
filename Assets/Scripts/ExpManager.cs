@@ -11,6 +11,8 @@ public class ExpManager : MonoBehaviour
     public TMP_Text expText;
     public bool enableDebugText = true;
     [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
+    [SerializeField] private CardUpgrades upgradeMenu;
+    private float constantExpTimer;
 
     private void Start()
     {
@@ -22,15 +24,29 @@ public class ExpManager : MonoBehaviour
     } 
     public void AddExp(int amount)
     {
-        currentExp += amount * (1f + allUpgradeModifiers.expGainModifier);
+        float expMultiplier = allUpgradeModifiers != null ? 1f + allUpgradeModifiers.expGainModifier : 1f;
+        currentExp += amount * expMultiplier;
         Debug.Log("Current Experience: " + currentExp + "/" + expToUpgrade);
         if (currentExp >= expToUpgrade)
         {
-            //OpenMenuUpgrade();
+            //upgradeMenu.ShowUpgradeMenu();
             currentExp -= expToUpgrade;
             expToUpgrade = Mathf.RoundToInt(expToUpgrade * expGrowthMultiplier); // Increase the experience needed for the next upgrade
         }
         UpdateExpUI();
+    }
+
+    private void Update()
+    {
+        if (allUpgradeModifiers != null && allUpgradeModifiers.ConstantExpModifier > 0f)
+        {
+            constantExpTimer += Time.deltaTime;
+            if (constantExpTimer >= allUpgradeModifiers.ConstantExpModifier)
+            {
+                constantExpTimer = 0f;
+                AddExp(1);
+            }
+        }
     }
 
     public void UpdateExpUI()

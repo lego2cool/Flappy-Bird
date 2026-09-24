@@ -18,6 +18,7 @@ public class gameStart : MonoBehaviour
     }
 
     public List<ButtonScene> buttonScenes = new List<ButtonScene>();
+    [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
 
     void Start()
     {
@@ -47,6 +48,23 @@ public class gameStart : MonoBehaviour
 
     void StartGame(string sceneName)
     {
+        ResetUpgradeModifiers();
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void ResetUpgradeModifiers()
+    {
+        if (allUpgradeModifiers == null)
+        {
+            return;
+        }
+
+        allUpgradeModifiers.PlayerScaleModifier = 0f;
+        allUpgradeModifiers.PipeFrequencyModifier = 0f;
+        allUpgradeModifiers.PipeGapModifier = 0f;
+        allUpgradeModifiers.LivesCount = 1;
+        allUpgradeModifiers.expGainModifier = 0f;
+        allUpgradeModifiers.ConstantExpModifier = 0f;
+        allUpgradeModifiers.LuckyPipesModifier = 0f;
     }
 }

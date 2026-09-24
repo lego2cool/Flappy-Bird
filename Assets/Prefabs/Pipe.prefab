@@ -49,6 +49,7 @@ MonoBehaviour:
   moveSpeed: 5
   destroyXPosition: -13
   expGainedFromPipe: 10
+  allUpgradeModifiers: {fileID: 11400000, guid: 71add1f5205004043b2ff71243875e06, type: 2}
   gotExpFromThisPipe: 0
 --- !u!1 &5817241678044187778
 GameObject:

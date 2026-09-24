@@ -5,6 +5,7 @@ public class Pipe : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float destroyXPosition = -13f;
     [SerializeField] private int expGainedFromPipe = 10; // X position where experience is gained
+    [SerializeField] private AllUpgradeModifiers allUpgradeModifiers;
     private Player player;
     private ExpManager expManager;
 
@@ -25,9 +26,16 @@ public class Pipe : MonoBehaviour
             MovePipe();
         }
 
-        if (transform.position.x <= player.transform.position.x && !gotExpFromThisPipe)
+        if (player != null && transform.position.x <= player.transform.position.x && !gotExpFromThisPipe)
         {
-            expManager.AddExp(expGainedFromPipe); // Add experience when the pipe is passed
+            int pipeExp = expGainedFromPipe;
+            if (allUpgradeModifiers != null && allUpgradeModifiers.LuckyPipesModifier > 0f &&
+                Random.value < allUpgradeModifiers.LuckyPipesModifier)
+            {
+                pipeExp *= 2;
+            }
+
+            expManager.AddExp(pipeExp); // Add experience when the pipe is passed
             gotExpFromThisPipe = true; // Set the flag to true to prevent multiple experience gains from the same pipe
         }
 
